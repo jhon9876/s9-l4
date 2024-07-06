@@ -2,6 +2,17 @@ import { Component } from "react";
 import { ListGroup } from "react-bootstrap";
 
 class CommentArea extends Component {
+  state = {
+    commenti: [],
+  };
+
+  salvaCommenti = (dati) => {
+    console.log(dati);
+    dati.map((date) => {
+      this.setState({});
+    });
+  };
+
   componentDidMount() {
     fetch(
       `https://striveschool-api.herokuapp.com/api/comments/${this.props.Asin}`,
@@ -22,7 +33,7 @@ class CommentArea extends Component {
         }
       })
       .then((dati) => {
-        console.log(dati);
+        this.salvaCommenti(dati);
       })
       .catch((err) => {
         console.log("errore: ", err);
