@@ -30,7 +30,9 @@ class SingleBook extends Component {
                 </Button>
               </Card.Body>
             </Card>
-            {this.state.selected && <CommentArea />}
+            {this.state.selected && (
+              <CommentArea Asin={this.props.Libri[0].asin} />
+            )}
           </Col>
         </Row>
       </Container>
