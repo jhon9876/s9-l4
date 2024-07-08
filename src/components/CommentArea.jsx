@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { ListGroup } from "react-bootstrap";
+import CommentsList from "./CommentsList";
 
 class CommentArea extends Component {
   state = {
@@ -9,7 +10,7 @@ class CommentArea extends Component {
   salvaCommenti = (dati) => {
     console.log(dati);
     dati.map((date) => {
-      this.setState({});
+      this.state.commenti.push(date.comment);
     });
   };
 
@@ -42,17 +43,21 @@ class CommentArea extends Component {
 
   render() {
     return (
-      <ListGroup>
-        <ListGroup.Item className="border border-primary">
-          Bel film
-        </ListGroup.Item>
-        <ListGroup.Item className="border border-primary">
-          Mi sono spaventato moltissimo!
-        </ListGroup.Item>
-        <ListGroup.Item className="border border-primary">
-          Film privo di suspance
-        </ListGroup.Item>
-      </ListGroup>
+      <>
+        <ListGroup>
+          <ListGroup.Item className="border border-primary">
+            Bel film
+          </ListGroup.Item>
+          <ListGroup.Item className="border border-primary">
+            Mi sono spaventato moltissimo!
+          </ListGroup.Item>
+          <ListGroup.Item className="border border-primary">
+            Film privo di suspance
+          </ListGroup.Item>
+        </ListGroup>
+
+        <CommentsList recensioni={this.state.commenti} />
+      </>
     );
   }
 }
