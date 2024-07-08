@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { ListGroup } from "react-bootstrap";
 import CommentsList from "./CommentsList";
+import AddComment from "./AddComment";
 
 class CommentArea extends Component {
   state = {
@@ -21,7 +22,7 @@ class CommentArea extends Component {
         headers: {
           "Content-Type": "application/json",
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njg5NTA0MjJiNWMyMDAwMTUyNzFmYmYiLCJpYXQiOjE3MjAyNzUyMzMsImV4cCI6MTcyMTQ4NDgzM30.mkdm6Fdqgq7s2uaYGQZ_JuMeHReKJWe6lYr7rcwMcZ8",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njg5NGVmYjJiNWMyMDAwMTUyNzFmYmUiLCJpYXQiOjE3MjA0NTYzOTQsImV4cCI6MTcyMTY2NTk5NH0.Kq5ouCuci_KTRFb2lD5viKjW1GcAsQrBl_uDWL4Lc6Y",
         },
       }
     )
@@ -57,6 +58,8 @@ class CommentArea extends Component {
         </ListGroup>
 
         <CommentsList recensioni={this.state.commenti} />
+        <br />
+        <AddComment Asin={this.props.Asin} />
       </>
     );
   }
